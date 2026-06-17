@@ -1,0 +1,1 @@
+For capstone project, we are going to build a simple automatic gate system using ESP32. The system will detect the plate number of the vehicle and open the gate if the plate number is registered in the system. The system will also keep a log of all the vehicles that have entered and exited the premises.
