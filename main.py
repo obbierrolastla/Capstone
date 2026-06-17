@@ -12,6 +12,7 @@ client = InferenceHTTPClient.init(
 # Configure video source (webcam)
 source = WebcamSource(resolution=(1280, 720))
 
+plat_nomor = ""
 # Configure streaming options
 config = StreamConfig(
     stream_output=["output_image"],  # Get video back with annotations
@@ -42,6 +43,8 @@ def show_frame(frame, metadata):
 def on_data(data: dict, metadata: VideoMetadata):
     if data.get("predictions").get("image").get("width") != None:  # Check if predictions are present
         print(f"Time: {datetime.now()} -> Frame {metadata.frame_id}: {data}")
+        plat_nomor = data.get("open_ai")[0]['output']
+        print(f"PLAT NOMOR: {plat_nomor}")
 
 # Run the session (blocks until closed)
 session.run()
