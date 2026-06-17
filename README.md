@@ -1,1 +1,0 @@
-Automatic plate detection and text extraction
